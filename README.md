@@ -14,11 +14,11 @@ Runtime-> Change Runtime type-> Hardware accelerator-> GPU.
 And then save.
 
 <p align="center">
-  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/master/media/pic0.png">
+  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic0.png">
 </p>
 
 <p align="center">
-  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/master/media/pic1.png">
+  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic1.png">
 </p>
 
 Once saved you will need to upload the script file contained in this folder and execute it.
