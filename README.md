@@ -1,17 +1,20 @@
 # CUDA C/C++ on Colab
-Repository with useful scripts for CUDA C/C++ on Colab
-## Getting started
-Go to this link to create a google Colab notebook
+This repository contains a tutorial and a script to get started with CUDA C/C++ in Google Colab.
+
+If you don't know what's Google Colaboratory, please visit the welcome page: https://colab.research.google.com 
+
+## Create and configure a notebook
+The first step is to create a new Colab notebook. You need to execute the following instructions only the first time, or everytime you want to create a new notebook.
+
+1. Go to this link to create a Google Colab notebook:
 
 https://colab.research.google.com/#create=true
 
-Then after having created the notebook we need to change the runtime from CPU to GPU.
-
-To do so click on the top bar:
+2. Then, change the runtime from CPU to GPU. To do so, click on the top bar:
 ```
 Runtime-> Change Runtime type-> Hardware accelerator-> GPU.
 ```
-And then save.
+And, then, save.
 
 <p align="center">
   <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic0.png">
@@ -21,28 +24,51 @@ And then save.
   <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic1.png">
 </p>
 
-Once saved you will need to upload the script file contained in this folder and execute it.
+Please, gain confidence with the basic commands and actions of Colab notebook (e.g., write and execute a Python command, upload a file in the notebook from your computer). Moreover, you should know that:
 
-As a general rule, most commands that have an exclamation point at the start (`!`) will be interpreted as OS commands instead of Python.
+* As a general rule, adding an exclamation point before any instruction (`!`) will force the notebook to interpret the instruction as OS commands instead of Python (Colab runs a Linux OS).
 
-Remeber to execute each command after typing it by pressing the start symbol on each code box. For the sake of simplicity I highly advise you to create a new box for each of the commands below.
 
-First clone this repository on the session by typing:
+## Install CUDA libraries
+Everytime you open the Colab notebook, you need to install CUDA libraries from scratch (It takes approximately 5 minutes).
+
+1.  First, clone this repository in the session:
 ```
 !git clone https://github.com/albertozeni/gpu_course_colab.git
 ```
-Then navigate inside the repo by typing:
+2. Then, move in the downloaded folder:
 ```
-%cd gpu_course_colab
+cd gpu_course_colab
 ```
-Once you reached this point you can run the cuda installer script by typing:
+3. Run the CUDA installer script:
 ```
 !bash install_cuda_colab.sh
 ```
-And finally you can go back a level so that you are outside of this repo directory
+4. And, finally, move in the main directory:
 ```
-%cd ..
+cd ..
 ```
-After doing this you will be able to execute most commands on the current instance of Colab.
-Remember that you will need to rexecute the script everytime you restart the runtime.
-To start programming with cuda you can do the same operations you will perform on a regular command line, just remember to type `!` before every command launched on Colab.
+
+## Compile and Execute a CUDA program
+The commands to compile and execute a CUDA program are the standard ones.
+
+1. Upload in the CUDA file in the notebook as show in the following screenshots
+<p align="center">
+  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic2.png">
+</p>
+
+<p align="center">
+  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic3.png">
+</p>
+
+2. Compile the program:
+```
+!nvcc my_cuda_appl.cu -o my_cuda_appl
+```
+
+3. Run the program:
+```
+!./my_cuda_appl
+```
+
+Do note that outputs of printf calls executed in a kernel on the device are not displayed on screen.
