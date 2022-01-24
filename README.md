@@ -63,7 +63,7 @@ The commands to compile and execute a CUDA program are the standard ones.
 
 2. Compile the program:
 ```
-!nvcc my_cuda_appl.cu -o my_cuda_appl
+!nvcc my_cuda_appl.cu -o my_cuda_appl 
 ```
 
 3. Run the program:
