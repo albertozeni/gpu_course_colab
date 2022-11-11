@@ -62,11 +62,11 @@ nvcc my_cuda_appl.cu -o my_cuda_appl
 Edit: The following stuff is required **only** if something does not work on your instance and you are unable to compile or execute source files for some reason.
 You can, and should, skip this step if everything works for you, as removing and reinstalling the cuda environment takes approximately 5 minutes.
 
-To remove and reinstall the CUDA libraries follow these steps:
+To remove and reinstall the CUDA libraries follow these steps (in the xterm terminal):
 
 1.  First, clone this repository in the session:
 ```
-!git clone https://github.com/albertozeni/gpu_course_colab.git
+git clone https://github.com/albertozeni/gpu_course_colab.git
 ```
 2. Then, move in the downloaded folder:
 ```
@@ -74,7 +74,7 @@ cd gpu_course_colab
 ```
 3. Run the CUDA installer script:
 ```
-!bash install_cuda_colab.sh
+bash install_cuda_colab.sh
 ```
 4. And, finally, move in the main directory:
 ```
