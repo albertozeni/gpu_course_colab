@@ -24,14 +24,21 @@ And, then, save.
   <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic1.png">
 </p>
 
-Please, gain confidence with the basic commands and actions of Colab notebook (e.g., write and execute a Python command, upload a file in the notebook from your computer). Moreover, you should know that:
-
-* As a general rule, adding an exclamation point before any instruction (`!`) will force the notebook to interpret the instruction as OS commands instead of Python (Colab runs a Linux OS).
+Please, gain confidence with the basic commands and actions of Colab notebook (e.g., write and execute a Python command, upload a file in the notebook from your computer).
 
 ## Compile and Execute a CUDA program
 The commands to compile and execute a CUDA program are the standard ones.
 
-1. Upload in the CUDA file in the notebook as show in the following screenshots
+1. Install xterm, as shown here:
+
+<p align="center">
+  <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic4.png">
+</p>
+
+* This will open up an interactive terminal, which you can use to compile, execute and handle your files normally (you basically have an Ubuntu machine available through this terminal). 
+
+2. Either clone a repository in the xterm terminal, or upload a CUDA file in the notebook as shown in the following screenshots:
+
 <p align="center">
   <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic2.png">
 </p>
@@ -40,18 +47,15 @@ The commands to compile and execute a CUDA program are the standard ones.
   <img width="639" height="223" src="https://github.com/albertozeni/gpu_course_colab/blob/main/media/pic3.png">
 </p>
 
-2. Compile the program:
+3. Compile the program:
 ```
-!nvcc my_cuda_appl.cu -o my_cuda_appl -arch=sm_35
-```
-**Note that the architecture flag is necessary when compiling, as the default architecture flag for CUDA refers to compute capability of 52.** 
-
-3. Run the program:
-```
-!./my_cuda_appl
+nvcc my_cuda_appl.cu -o my_cuda_appl 
 ```
 
-Do note that outputs of printf calls executed inside a kernel on the GPU are not displayed on screen.
+4. Run the program:
+```
+./my_cuda_appl
+```
 
 ## Install CUDA libraries - If compiling/running executables does not work
 
